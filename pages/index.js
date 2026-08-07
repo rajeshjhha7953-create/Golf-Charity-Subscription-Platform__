@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import Head from "next/head"
 import { useRouter } from "next/router"
 import { AnimatePresence, motion } from "framer-motion"
 import {
@@ -64,7 +65,12 @@ export default function Home() {
   }
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950 text-white">
+    <>
+      <Head>
+        <title>Golf Charity Subscription Platform</title>
+        <meta name="description" content="Modern golf club management platform with subscriptions, tournaments, charity fundraising, leaderboards and analytics." />
+      </Head>
+      <main className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950 text-white">
       <div className="absolute inset-0 opacity-50">
         <div className="absolute -left-24 top-8 h-72 w-72 rounded-full bg-emerald-500/30 blur-3xl" />
         <div className="absolute right-0 top-1/4 h-96 w-96 rounded-full bg-blue-500/30 blur-3xl" />
@@ -80,10 +86,10 @@ export default function Home() {
               </div>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-200/90">
-                  CourseIQ
+                  Golf Charity
                 </p>
                 <h1 className="text-3xl font-bold tracking-tight text-white">
-                  Golf Intelligence
+                  Golf Charity Subscription Platform
                 </h1>
               </div>
             </div>
@@ -91,16 +97,15 @@ export default function Home() {
             <div className="max-w-xl">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-100">
                 <Sparkles className="h-4 w-4" />
-                Club Platform
+                Golf Charity
               </div>
 
               <h2 className="max-w-2xl text-5xl font-bold leading-tight tracking-tight text-white">
-                Turn performance into your next advantage.
+                The complete platform for golf clubs and charity events.
               </h2>
 
               <p className="mt-6 max-w-xl text-base leading-7 text-slate-300">
-                Access your club intelligence dashboard, competition activity,
-                and performance analytics from one secure workspace.
+                Manage memberships, tournament scores, charity campaigns, subscriptions, leaderboards and analytics from one secure dashboard.
               </p>
 
               <div className="mt-10 grid max-w-xl grid-cols-3 gap-4">
@@ -321,7 +326,7 @@ export default function Home() {
                       </>
                     ) : (
                       <>
-                        {isLogin ? "Login to dashboard" : "Create account"}
+                        {isLogin ? "Login to Dashboard" : "Create Account"}
                         <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                       </>
                     )}
@@ -329,7 +334,7 @@ export default function Home() {
 
                   <div className="flex items-center justify-center pt-2">
                     <span className="text-xs text-slate-400">
-                      {isLogin ? "New to CourseIQ?" : "Already have an account?"}
+                      {isLogin ? "New to Golf Charity?" : "Already have an account?"}
                     </span>
                     <button
                       type="button"
@@ -351,5 +356,6 @@ export default function Home() {
         </div>
       </div>
     </main>
+    </>
   )
 }

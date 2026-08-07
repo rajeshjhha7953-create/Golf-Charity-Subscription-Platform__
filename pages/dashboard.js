@@ -4,6 +4,7 @@
 // ==============================
 
 import { useEffect, useState } from "react"
+import Head from "next/head"
 import { useRouter } from "next/router"
 import { motion } from "framer-motion"
 import {
@@ -176,7 +177,12 @@ export default function Dashboard() {
 
   // Main dashboard view for subscribed users
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950 text-white">
+    <>
+      <Head>
+        <title>Golf Charity Subscription Platform</title>
+        <meta name="description" content="Modern golf club management platform with subscriptions, tournaments, charity fundraising, leaderboards and analytics." />
+      </Head>
+      <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950 text-white">
       <div className="absolute inset-0 opacity-50">
         <div className="absolute -left-24 top-8 h-72 w-72 rounded-full bg-emerald-500/30 blur-3xl" />
         <div className="absolute right-0 top-1/4 h-96 w-96 rounded-full bg-blue-500/30 blur-3xl" />
@@ -192,7 +198,7 @@ export default function Dashboard() {
               <div>
                 <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-200">
                   <Sparkles className="h-4 w-4" />
-                  CourseIQ
+                  Golf Charity
                 </div>
                 <h1 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
                   Dashboard
@@ -456,5 +462,6 @@ export default function Dashboard() {
         </div>
       </div>
     </div>
+    </>
   )
 }
